@@ -1,0 +1,38 @@
+1.run mongodb
+mongod
+(default path is /data/db/)
+or mongod --dbpath ~/mongodb/data/db/
+
+2.run mongodb shell
+first input: 
+> help
+show dbs 		#show database names
+show collections	#show collections in current database
+show users		#show users in current database
+use <db_name>           #set current database
+db.foo.find()		#list objects in collection foo
+db.foo.find( { a : 1 } )	#list objects in foo where a == 1
+it			#result of the last line evaluated; use to further iterate
+exit
+
+db			#show current collection
+
+3.create a new database
+use mydb
+
+4.insert
+db.mydb.insert(document)
+#for example:
+db.mydb.insert({name:'lisper', age:18})
+
+5.find
+#show all data of mydb
+db.mydb.find()
+
+db.mydb.find([query],[fields]) - query is an optional query filter. fields is optional set of fields to return.
+			                                              e.g. db.mydb.find( {x:77} , {name:1, x:1} )
+
+6.remove
+db.mydb.remove({})
+
+
